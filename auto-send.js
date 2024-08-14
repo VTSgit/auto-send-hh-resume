@@ -43,7 +43,7 @@ async function init() {
     const frontendCoverMessage = getFrontendCoverMessage(vacancyName)
 // Сообщения по резюме
     var messagesData = {
-      frontend: frontendCoverMessage`,
+      frontend: frontendCoverMessage,
     };
 
     var messageArea = document.querySelector(
@@ -80,14 +80,14 @@ async function init() {
   // Иначе вызвать функцию на странице со списком вакансий
   else {
     while (i < vacancies.length) {
-      vacancies[i+1].click();
+      vacancies[i].click();
 
       await delay(1000);
       selectResume();
 
       await delay(500);
       handlerCoverLetter();
-      i++;
+      i+=2;
 
       await delay(1000);
     }
