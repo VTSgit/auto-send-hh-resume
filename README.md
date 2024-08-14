@@ -1,5 +1,28 @@
 # auto-send-hh-resume
+## ENG 
+## Project description
+**auto-send-hh-resume** is a script for automatically sending responses to HeadHunter (hh).
 
+## For what and why:
+- Every day you have to look through hundreds of vacancies;
+- Monitor vacancies in target companies;
+- Spend time writing your cover letter.
+
+  In short, it's a waste of time.
+
+## Target:
+- Help people quickly find work in the target company.
+
+## Install and run the script:
+
+- Install the extension on Chrome - **[Scripty](https://chrome.google.com/webstore/detail/scripty-javascript-inject/milkbiaeapddfnpenedfgbfdacpbcbam)**;
+- Next, create a new script through it (right-click on the extension icon -> Scripty -> Create Script) and enter into it what is in the file.
+- Be sure to create a second resume in xx, make it hidden in it, you can put anything in it, you just need it so that the menu appears when you call to select a resume.
+- That's it, everything should work now.
+
+
+
+## RU
 ## Описание проекта
 **auto-send-hh-resume** — это скрипт для автоматической отправки откликов на HeadHunter (hh).
 
