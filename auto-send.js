@@ -15,14 +15,14 @@ function delay(ms) {
 }
 
 async function init() {
-  var vacancies = document.querySelectorAll('[data-qa="vacancy-serp__vacancy_response"]');
-  var vacancy = document.querySelector('[data-qa="vacancy-response-link-top"]');
-  var i = 0;
+  const vacancies = document.querySelectorAll('[data-qa="vacancy-serp__vacancy_response"]');
+  const vacancy = document.querySelector('[data-qa="vacancy-response-link-top"]');
+  let i = 0;
   
   // Функция для автоматического выбора резюме
   function selectResume() {
-    var resume = document.querySelector(ResumeId);
-    var message = document.querySelector('[data-qa="vacancy-response-letter-toggle"]');
+    const resume = document.querySelector(ResumeId);
+    const message = document.querySelector('[data-qa="vacancy-response-letter-toggle"]');
 
     if (resume) {
       resume.click();
@@ -35,30 +35,30 @@ async function init() {
   // Функция для автоматической отправки сопроводительного письма
   function handlerCoverLetter() {
     // Шаблон сопроводительного письма
-    var vacancyTitleElement = document.querySelector('.bloko-modal-header_outlined > div');
+    const vacancyTitleElement = document.querySelector('.bloko-modal-header_outlined > div');
     if (!vacancyTitleElement) return;
 
-    var vacancyTitle = vacancyTitleElement.textContent;
-    var vacancyName = vacancyTitle.slice(1, vacancyTitle.length - 1);
+    const vacancyTitle = vacancyTitleElement.textContent;
+    const vacancyName = vacancyTitle.slice(1, vacancyTitle.length - 1);
     const frontendCoverMessage = getFrontendCoverMessage(vacancyName)
 // Сообщения по резюме
-    var messagesData = {
+    const messagesData = {
       frontend: frontendCoverMessage,
     };
 
-    var messageArea = document.querySelector(
+    const messageArea = document.querySelector(
       '[data-qa="vacancy-response-popup-form-letter-input"]'
     );
     if (messageArea) {
       messageArea.value = messagesData.frontend;
 
       // Добавить изменения в поле текста
-      var evt = document.createEvent('HTMLEvents');
+      const evt = document.createEvent('HTMLEvents');
       evt.initEvent('change', true, true);
       messageArea.dispatchEvent(evt);
 
       // Отправить отклик
-      var btnSubmit = document.querySelector('[data-qa="vacancy-response-submit-popup"]');
+      const btnSubmit = document.querySelector('[data-qa="vacancy-response-submit-popup"]');
       if (btnSubmit) btnSubmit.click();
     }
   }
@@ -80,7 +80,7 @@ async function init() {
   // Иначе вызвать функцию на странице со списком вакансий
   else {
     while (i < vacancies.length) {
-      vacancies[i].click();
+      vacancies[i+1].click();
 
       await delay(1000);
       selectResume();
